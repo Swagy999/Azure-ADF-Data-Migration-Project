@@ -1,0 +1,154 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "swagymigrationprojectadf"
+		},
+		"DS_SQLTBL_PRT1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'DS_SQLTBL_PRT1'"
+		},
+		"LS_PARQUET_AzureDataLakeStorage_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_PARQUET_AzureDataLakeStorage'"
+		},
+		"LS_Parquet_SqlServer_DW_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_Parquet_SqlServer_DW'"
+		},
+		"LS_onprem_SQLserver_DW_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_onprem_SQLserver_DW'"
+		},
+		"LS_sqlserver_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_sqlserver'"
+		},
+		"DS_SQLTBL_PRT1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://swamigrationpjtstorage.dfs.core.windows.net/"
+		},
+		"LS_PARQUET_AzureDataLakeStorage_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://swamigrationpjtstorage.dfs.core.windows.net/"
+		},
+		"LS_Parquet_SqlServer_DW_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "SWAGGY\\SQLEXPRESS"
+		},
+		"LS_Parquet_SqlServer_DW_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "ReatailDW_Swag"
+		},
+		"LS_Parquet_SqlServer_DW_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "SWAGGY\\hp"
+		},
+		"LS_onprem_SQLserver_DW_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "SWAGGY\\SQLEXPRESS"
+		},
+		"LS_onprem_SQLserver_DW_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "RetailDW_Swag"
+		},
+		"LS_onprem_SQLserver_DW_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "adfadmin"
+		},
+		"LS_sqlserver_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "SWAGGY\\SQLEXPRESS"
+		},
+		"LS_sqlserver_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "RetailDW_Swag"
+		},
+		"LS_sqlserver_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "adfadmin"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "swagymigrationprojectadf_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LS_PARQUET_AzureDataLakeStorage_accountKey": {
+						"value": "[parameters('LS_PARQUET_AzureDataLakeStorage_accountKey')]"
+					},
+					"DS_SQLTBL_PRT1_accountKey": {
+						"value": "[parameters('DS_SQLTBL_PRT1_accountKey')]"
+					},
+					"LS_Parquet_SqlServer_DW_password": {
+						"value": "[parameters('LS_Parquet_SqlServer_DW_password')]"
+					},
+					"LS_onprem_SQLserver_DW_password": {
+						"value": "[parameters('LS_onprem_SQLserver_DW_password')]"
+					},
+					"LS_sqlserver_password": {
+						"value": "[parameters('LS_sqlserver_password')]"
+					},
+					"LS_PARQUET_AzureDataLakeStorage_properties_typeProperties_url": {
+						"value": "[parameters('LS_PARQUET_AzureDataLakeStorage_properties_typeProperties_url')]"
+					},
+					"DS_SQLTBL_PRT1_properties_typeProperties_url": {
+						"value": "[parameters('DS_SQLTBL_PRT1_properties_typeProperties_url')]"
+					},
+					"LS_Parquet_SqlServer_DW_properties_typeProperties_server": {
+						"value": "[parameters('LS_Parquet_SqlServer_DW_properties_typeProperties_server')]"
+					},
+					"LS_Parquet_SqlServer_DW_properties_typeProperties_database": {
+						"value": "[parameters('LS_Parquet_SqlServer_DW_properties_typeProperties_database')]"
+					},
+					"LS_Parquet_SqlServer_DW_properties_typeProperties_userName": {
+						"value": "[parameters('LS_Parquet_SqlServer_DW_properties_typeProperties_userName')]"
+					},
+					"LS_onprem_SQLserver_DW_properties_typeProperties_server": {
+						"value": "[parameters('LS_onprem_SQLserver_DW_properties_typeProperties_server')]"
+					},
+					"LS_onprem_SQLserver_DW_properties_typeProperties_database": {
+						"value": "[parameters('LS_onprem_SQLserver_DW_properties_typeProperties_database')]"
+					},
+					"LS_onprem_SQLserver_DW_properties_typeProperties_userName": {
+						"value": "[parameters('LS_onprem_SQLserver_DW_properties_typeProperties_userName')]"
+					},
+					"LS_sqlserver_properties_typeProperties_server": {
+						"value": "[parameters('LS_sqlserver_properties_typeProperties_server')]"
+					},
+					"LS_sqlserver_properties_typeProperties_database": {
+						"value": "[parameters('LS_sqlserver_properties_typeProperties_database')]"
+					},
+					"LS_sqlserver_properties_typeProperties_userName": {
+						"value": "[parameters('LS_sqlserver_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

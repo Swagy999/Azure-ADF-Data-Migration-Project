@@ -1,0 +1,63 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "swagymigrationprojectadf"
+		},
+		"DS_SQLTBL_PRT1_accountKey": {
+			"value": ""
+		},
+		"LS_PARQUET_AzureDataLakeStorage_accountKey": {
+			"value": ""
+		},
+		"LS_Parquet_SqlServer_DW_password": {
+			"value": ""
+		},
+		"LS_onprem_SQLserver_DW_password": {
+			"value": ""
+		},
+		"LS_sqlserver_password": {
+			"value": ""
+		},
+		"DS_SQLTBL_PRT1_properties_typeProperties_url": {
+			"value": "https://swamigrationpjtstorage.dfs.core.windows.net/"
+		},
+		"LS_PARQUET_AzureDataLakeStorage_properties_typeProperties_url": {
+			"value": "https://swamigrationpjtstorage.dfs.core.windows.net/"
+		},
+		"LS_Parquet_SqlServer_DW_properties_typeProperties_server": {
+			"value": "SWAGGY\\SQLEXPRESS"
+		},
+		"LS_Parquet_SqlServer_DW_properties_typeProperties_database": {
+			"value": "ReatailDW_Swag"
+		},
+		"LS_Parquet_SqlServer_DW_properties_typeProperties_userName": {
+			"value": "SWAGGY\\hp"
+		},
+		"LS_onprem_SQLserver_DW_properties_typeProperties_server": {
+			"value": "SWAGGY\\SQLEXPRESS"
+		},
+		"LS_onprem_SQLserver_DW_properties_typeProperties_database": {
+			"value": "RetailDW_Swag"
+		},
+		"LS_onprem_SQLserver_DW_properties_typeProperties_userName": {
+			"value": "adfadmin"
+		},
+		"LS_sqlserver_properties_typeProperties_server": {
+			"value": "SWAGGY\\SQLEXPRESS"
+		},
+		"LS_sqlserver_properties_typeProperties_database": {
+			"value": "RetailDW_Swag"
+		},
+		"LS_sqlserver_properties_typeProperties_userName": {
+			"value": "adfadmin"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
