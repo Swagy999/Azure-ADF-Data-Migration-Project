@@ -1,0 +1,15 @@
+{
+	"name": "swagymigrationprojectadf",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "2b6347b5-6884-4d60-a36f-9cffe00fa23c",
+		"tenantId": "34d89049-2596-48fc-ad8a-738327f2ffb6"
+	}
+}

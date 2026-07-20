@@ -1,0 +1,16 @@
+{
+	"name": "DS_SQLTBL_PRT1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://swamigrationpjtstorage.dfs.core.windows.net/",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI4NWZlM2NiZS04M2M4LTQyYjAtOTM5NS00YWEwZmIxYmMzZDEiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "projectintegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

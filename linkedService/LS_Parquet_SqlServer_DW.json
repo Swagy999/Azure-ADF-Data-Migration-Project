@@ -1,0 +1,21 @@
+{
+	"name": "LS_Parquet_SqlServer_DW",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "SWAGGY\\SQLEXPRESS",
+			"database": "ReatailDW_Swag",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "SWAGGY\\hp",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI2NjQxZDkyOS04Zjg3LTRmOTQtOTBhYy1kZTI3NDQyMTI4MDkiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "projectintegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
